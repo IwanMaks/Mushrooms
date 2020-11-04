@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'db/db.php';
 
 $cats = $connect->query("SELECT * FROM category");
@@ -25,7 +25,7 @@ $cats = $cats->fetchAll(PDO::FETCH_ASSOC);
         <? foreach ($cats as $cat) { ?>
         <li><a href="index.php?cat=<?=$cat['name']?>"><?=$cat['russian']?></a></li>
         <? } ?>
-        <li><a href="cart.php">Корзина (Товаров: 15 на сумму 9955 руб)</a></li>
+        <li><a href="cart.php">Корзина (Товаров: <?=$_SESSION['totalQuantity'] ? $_SESSION['totalQuantity'] : 0?> на сумму <?=$_SESSION['totalPrice'] ? $_SESSION['totalPrice'] : 0?> руб)</a></li>
     </ul>
 </nav>
 <hr>

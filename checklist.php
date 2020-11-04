@@ -74,22 +74,22 @@
     <hr>
 
     <div class="div">
-        <input type="checkbox" id="test5">
+        <input type="checkbox" id="test5" checked>
         <label for="test5">5. Переход по категориям товаров</label>
     </div>
 
     <div class="div">
-        <input type="checkbox" id="test6">
+        <input type="checkbox" id="test6" checked>
         <label for="test6">6. Вывести карточку конкретного товара</label>
     </div>
 
     <div class="div">
-        <input type="checkbox" id="test7">
+        <input type="checkbox" id="test7" checked>
         <label for="test7">7. Добавление товара в корзину, отображение в меню</label>
     </div>
 
     <div class="div">
-        <input type="checkbox" id="test8">
+        <input type="checkbox" id="test8" checked>
         <label for="test8">8. Отображение товаров в корзине</label>
     </div>
 
