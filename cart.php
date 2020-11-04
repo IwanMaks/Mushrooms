@@ -1,8 +1,13 @@
 <?php
-session_start();
+
 require_once 'parts/header.php';
 
-foreach ($_SESSION['card'] as $product) {
+if (count($_SESSION['card']) == 0) { ?>
+    <h2 class="cart-title">Ваша корзина пуста</h2>
+    <a class="back" href="index.php">На главную</a>
+<?php } else {
+
+foreach ($_SESSION['card'] as $key=>$product) {
 
 ?>
 
@@ -11,9 +16,16 @@ foreach ($_SESSION['card'] as $product) {
     <div class="cart-descr">
         <?=$product['russian']?> в количестве <?=$product['quantity']?> шт на сумму <?=$product['quantity'] * $product['price']?> рублей
     </div>
-    <button type="submit">Удалить</button>
+    <form action="actions/delete.php" method="post">
+        <input type="hidden" name="delete" value="<?=$key?>">
+        <input type="submit" value="Удалить">
+    </form>
 </div>
-<? } ?>
+<hr>
+
+    <form action="actions/mail.php"></form>
+
+<? }} ?>
 <hr>
 
 </body>
